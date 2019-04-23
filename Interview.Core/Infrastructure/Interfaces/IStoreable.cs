@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Interview
+namespace Interview.Core.Infrastructure.Interfaces
 {
     public interface IStoreable
     {

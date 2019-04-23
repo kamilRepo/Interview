@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Interview
+namespace Interview.Core.Infrastructure.Interfaces
 {
     // Please create an in memory implementation of IRepository<T> 
 
