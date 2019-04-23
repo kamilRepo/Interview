@@ -27,6 +27,11 @@ namespace Interview.Core.Infrastructure
             return _instance;
         }
 
+        public void Clear()
+        {
+            _entities.Clear();
+        }
+
         public void Delete(object obj)
         {
             _entities.Remove(obj);

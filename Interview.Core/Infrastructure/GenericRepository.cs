@@ -4,11 +4,18 @@ using Interview.Core.Infrastructure.Interfaces;
 
 namespace Interview.Core.Infrastructure
 {
-    public class GenericRepository<T> : IRepository<T> where T : IStoreable
+    public class GenericRepository<T> : IRepository<T> where T : Storeable
     {
+        private IEntityManager _entityManager;
+
+        public GenericRepository(IEntityManager entityManager)
+        {
+            _entityManager = entityManager;
+        }
+
         public IEnumerable<T> All()
         {
-            throw new NotImplementedException();
+            return _entityManager.GetAll<T>();
         }
 
         public void Delete(IComparable id)

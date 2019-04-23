@@ -42,5 +42,10 @@ namespace Interview.Core.Infrastructure.Interfaces
         //     A transient instance containing new state
         //
         void Save(object obj);
+
+        //
+        // Summary:
+        //     Removed all items
+        void Clear();
     }
 }

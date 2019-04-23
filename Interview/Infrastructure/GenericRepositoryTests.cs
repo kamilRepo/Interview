@@ -12,7 +12,10 @@ namespace Interview.Infrastructure
         public void FindById_ContainId_FindItem()
         {
             //Preparation
-            IRepository<Storeable> repository = new GenericRepository<Storeable>();
+            // In Real app with unit tests we should mock EntityManager
+            var entityManager = EntityManager.Instance();
+            entityManager.Clear();
+            IRepository<Storeable> repository = new GenericRepository<Storeable>(entityManager);
 
             Storeable storeableA = new Storeable()
             {
@@ -39,7 +42,10 @@ namespace Interview.Infrastructure
         public void FindById_DontContainId_CantFindItem()
         {
             //Preparation
-            IRepository<Storeable> repository = new GenericRepository<Storeable>();
+            // In Real app with unit tests we should mock EntityManager
+            var entityManager = EntityManager.Instance();
+            entityManager.Clear();
+            IRepository<Storeable> repository = new GenericRepository<Storeable>(entityManager);
 
             Storeable storeableA = new Storeable()
             {
@@ -66,7 +72,10 @@ namespace Interview.Infrastructure
         public void Save_ContainId_UpdatedExistItem()
         {
             //Preparation
-            IRepository<Storeable> repository = new GenericRepository<Storeable>();
+            // In Real app with unit tests we should mock EntityManager
+            var entityManager = EntityManager.Instance();
+            entityManager.Clear();
+            IRepository<Storeable> repository = new GenericRepository<Storeable>(entityManager);
 
             Storeable storeableA = new Storeable()
             {
@@ -95,7 +104,10 @@ namespace Interview.Infrastructure
         public void Save_DontContainId_AddedNewItems()
         {
             //Preparation
-            IRepository<Storeable> repository = new GenericRepository<Storeable>();
+            // In Real app with unit tests we should mock EntityManager
+            var entityManager = EntityManager.Instance();
+            entityManager.Clear();
+            IRepository<Storeable> repository = new GenericRepository<Storeable>(entityManager);
 
             Storeable storeableA = new Storeable()
             {
@@ -122,10 +134,14 @@ namespace Interview.Infrastructure
             Assert.AreEqual(storeableB.Name, itemB.Name);
         }
 
+        [TestMethod]
         public void Save_CheckReturnInstance_CorrectInstance()
         {
             //Preparation
-            IRepository<Storeable> repository = new GenericRepository<Storeable>();
+            // In Real app with unit tests we should mock EntityManager
+            var entityManager = EntityManager.Instance();
+            entityManager.Clear();
+            IRepository<Storeable> repository = new GenericRepository<Storeable>(entityManager);
 
             Storeable storeableA = new Storeable()
             {
@@ -152,7 +168,10 @@ namespace Interview.Infrastructure
         public void Delete_DontContainId_NoAction()
         {
             //Preparation
-            IRepository<Storeable> repository = new GenericRepository<Storeable>();
+            // In Real app with unit tests we should mock EntityManager
+            var entityManager = EntityManager.Instance();
+            entityManager.Clear();
+            IRepository<Storeable> repository = new GenericRepository<Storeable>(entityManager);
 
             Storeable storeableA = new Storeable()
             {
@@ -187,7 +206,10 @@ namespace Interview.Infrastructure
         public void Delete_ContainId_RemovedItem()
         {
             //Preparation
-            IRepository<Storeable> repository = new GenericRepository<Storeable>();
+            // In Real app with unit tests we should mock EntityManager
+            var entityManager = EntityManager.Instance();
+            entityManager.Clear();
+            IRepository<Storeable> repository = new GenericRepository<Storeable>(entityManager);
 
             Storeable storeableA = new Storeable()
             {
@@ -220,7 +242,10 @@ namespace Interview.Infrastructure
         public void All_ReturnAll_AllReturned()
         {
             //Preparation
-            IRepository<Storeable> repository = new GenericRepository<Storeable>();
+            // In Real app with unit tests we should mock EntityManager
+            var entityManager = EntityManager.Instance();
+            entityManager.Clear();
+            IRepository<Storeable> repository = new GenericRepository<Storeable>(entityManager);
 
             Storeable storeableA = new Storeable()
             {
