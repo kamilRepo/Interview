@@ -30,7 +30,7 @@ namespace Interview.Core.Infrastructure
 
         public void Save(T item)
         {
-            throw new NotImplementedException();
+            _entityManager.Save(item);
         }
     }
 }
