@@ -20,7 +20,7 @@ namespace Interview.Core.Infrastructure
 
         public void Delete(IComparable id)
         {
-            throw new NotImplementedException();
+            _entityManager.Delete(id);
         }
 
         public T FindById(IComparable id)
