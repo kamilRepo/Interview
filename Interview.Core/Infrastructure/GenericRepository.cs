@@ -25,7 +25,7 @@ namespace Interview.Core.Infrastructure
 
         public T FindById(IComparable id)
         {
-            throw new NotImplementedException();
+            return _entityManager.Get<T>(id);
         }
 
         public void Save(T item)
